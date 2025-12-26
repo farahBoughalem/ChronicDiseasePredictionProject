@@ -10,7 +10,7 @@ const INITIAL = {
     Race: "",
 };
 
-const API_URL = "http://localhost:8000/api/hypertension/";
+const API_URL = "/api/hypertension/";
 
 function toNumberOrNull(v) {
     if (v === "" || v === null || v === undefined) return null;
