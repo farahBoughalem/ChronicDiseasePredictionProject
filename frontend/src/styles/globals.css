@@ -1,0 +1,202 @@
+:root {
+    --brand-font: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+.poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.poppins-medium {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.poppins-semibold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    background: white;
+}
+
+.top-header {
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.top-header a {
+    display: inline-flex;
+    align-items: center;
+    gap: clamp(0.15rem, 0.6vw, 0.35rem);
+    text-decoration: none;
+    color: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+.app-logo {
+    height: clamp(2rem, 4vw, 3rem);
+    width: auto
+}
+
+.app-name {
+    font-family: var(--brand-font);
+    font-weight: 600;
+    font-size: clamp(1.4rem, 3vw, 2.2rem);
+    letter-spacing: 0.02em;
+    line-height: 1;
+    color: white;
+}
+
+
+.app.gradient-bg {
+    height: 100vh;
+    background: radial-gradient(
+            circle at center,
+            #2f5bff 0%,
+            #1f3fae 40%,
+            #0b1a4a 75%,
+            #050b26 100%
+    );
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 1.5rem 4rem 2.5rem;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.top-header a,
+.top-header a:visited,
+.top-header a:hover,
+.top-header a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.hero-tagline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: clamp(0.75rem, 3vh, 1.5rem);
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.hero-tagline p {
+    font-family: var(--brand-font);
+}
+
+.hero-tagline img.hero-image {
+    width: 47%;
+    max-width: 600px;
+    height: auto;
+    margin-left: 1rem;
+}
+
+.tagline-strong {
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 600;
+    font-style: normal;
+    font-size: clamp(1.8rem, 3.9vw, 3rem);
+    margin: 0;
+}
+
+.tagline-soft {
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 400;
+    font-style: normal;
+    font-size: clamp(1.2rem, 2.6vw, 2rem);
+}
+
+.features {
+    color: rgba(255, 255, 255, 0.95);
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: clamp(0.7rem, 1.5vw, 1.1rem);
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.bulletpoint {
+    color: rgb(98, 141, 255);
+}
+
+.race-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 0.5rem;
+}
+
+.race-btn {
+padding: 0.6rem 0.75rem;
+border: 1px solid #0d6efd;
+background-color: transparent;
+color: #0d6efd;
+font-weight: 400;
+border-radius: 6px;
+transition: all 0.15s ease-in-out;
+}
+
+.race-btn:hover {
+background-color: rgba(13, 110, 253, 0.08);
+}
+
+.race-btn.active {
+background-color: #0d6efd;
+color: white;
+}
+
+
+@media (max-width: 48rem) {
+    .app.gradient-bg {
+        height: 100dvh;
+        padding: 1.25rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .top-header {
+        flex-shrink: 0;
+        justify-content: center;
+    }
+
+    .hero-tagline {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        max-height: 28rem;
+        margin-inline: auto;
+    }
+
+    .hero-image {
+        display: none;
+    }
+
+    .hero-tagline > div {
+        width: 100%;
+        max-width: 26rem;
+    }
+
+
+    .hero-tagline .btn {
+        width: 100%;
+        max-width: 18rem;
+        margin-inline: auto;
+    }
+
+}
+
+
