@@ -10,7 +10,7 @@ const INITIAL = {
     Diabetes: "",
 };
 
-const API_URL = "http://localhost:8000/api/cvd/";
+const API_URL = "/api/cvd/";
 
 function toNumberOrNull(v) {
     if (v === "" || v === null || v === undefined) return null;
