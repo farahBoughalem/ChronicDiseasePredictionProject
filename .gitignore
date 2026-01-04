@@ -1,15 +1,11 @@
-# ===== IDE (keep) =====
-/shelf/
-/workspace.xml
-/httpRequests/
-/dataSources/
-/dataSources.local.xml
+# ===== IDE =====
+.idea/
+.vscode/
 
 # ===== Python / Django =====
 __pycache__/
 *.pyc
 *.pyo
-*.pyd
 .env
 db.sqlite3
 staticfiles/
