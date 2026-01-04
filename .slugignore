@@ -1,0 +1,15 @@
+# Frontend is deployed on Netlify
+frontend/
+
+# Training data/scripts not needed at runtime
+data/
+ml/
+
+# IDE and caches
+.idea/
+__pycache__/
+*.pyc
+*.pyo
+
+# Local db
+db.sqlite3

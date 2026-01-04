@@ -1,23 +1,26 @@
-# ===== IDE =====
+# IDE
 .idea/
 .vscode/
 
-# ===== Python / Django =====
+# Python
 __pycache__/
 *.pyc
 *.pyo
+*.pyd
 .env
 db.sqlite3
-staticfiles/
 
-# ===== Node / React =====
-node_modules/
+# Data (training only)
+data/
+*.csv
+*.xpt
+
+# React build artifacts
 frontend/node_modules/
 frontend/build/
+node_modules/
 
-# ===== OS =====
+# Logs
+*.log
 .DS_Store
 Thumbs.db
-
-# ===== Logs =====
-*.log
