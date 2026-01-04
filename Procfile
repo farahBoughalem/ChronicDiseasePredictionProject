@@ -1,0 +1,1 @@
+web: gunicorn chronic_diseases_prediction.wsgi

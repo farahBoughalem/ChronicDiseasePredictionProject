@@ -20,14 +20,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-fzco4u3*&eqs*+_oa01_hs1gp!jct=1^80ugc+iwoa84#3!3jt'
+SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "unsafe-secret-key-for-local-only")
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "*"]
+ALLOWED_HOSTS = ["*"]
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
+DEBUG = os.environ.get("DJANGO_DEBUG", "0") == "1"
 
 # Application definition
 
@@ -43,10 +42,11 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
     'corsheaders.middleware.CorsMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -73,15 +73,14 @@ TEMPLATES = [
 WSGI_APPLICATION = 'chronic_diseases_prediction.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/5.2/ref/settings/#databases
+# Database - disabled
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.dummy"
     }
 }
+
 
 
 # Password validation
@@ -125,13 +124,4 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# CORS allowed domains
-DEBUG = os.getenv("DJANGO_DEBUG", "1") == "1"
-
-if DEBUG:
-    CORS_ALLOWED_ORIGINS = [
-        "http://localhost:3000",
-        "http://127.0.0.1:3000",
-    ]
-else:
-    CORS_ALLOWED_ORIGINS = []
+CORS_ALLOW_ALL_ORIGINS = True
