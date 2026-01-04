@@ -10,7 +10,8 @@ const INITIAL = {
     Race: "",
 };
 
-const API_URL = "/api/hypertension/";
+const API_BASE = process.env.REACT_APP_API_BASE_URL || "http://localhost:8000";
+const API_URL = `${API_BASE}/api/hypertension/`;
 
 function toNumberOrNull(v) {
     if (v === "" || v === null || v === undefined) return null;

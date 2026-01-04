@@ -20,8 +20,9 @@ const MALE_INITIAL = {
     FastingBloodGlucose: "",
 };
 
-const DIABETES_FEMALE_API_URL = "/api/diabetes/female/";
-const DIABETES_MALE_API_URL = "/api/diabetes/male/";
+const API_BASE = process.env.REACT_APP_API_BASE_URL || "http://localhost:8000";
+const DIABETES_FEMALE_API_URL = `${API_BASE}/api/diabetes/female/`;
+const DIABETES_MALE_API_URL = `${API_BASE}/api/diabetes/male/`;
 
 function toNumberOrNull(v) {
     if (v === "" || v === null || v === undefined) return null;
